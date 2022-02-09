@@ -17,13 +17,13 @@ export default function TextForm(prop) {
 
     const handleOnClick1 = () => {
         setText(text.toUpperCase());
-        prop.showAlert("converted to uppercase!" , "success")
-        
+        prop.showAlert("converted to uppercase!", "success")
+
     }
 
     const handleOnClick2 = () => {
         setText(text.toLowerCase())
-        prop.showAlert("converted to lowercase!" , "success")
+        prop.showAlert("converted to lowercase!", "success")
     }
 
     const handleOnClick3 = () => {
@@ -53,31 +53,30 @@ export default function TextForm(prop) {
         navigator.clipboard.writeText(text.value);
     }
 
-
-
     return (<>
+       
         <div className='container ' >
             <div className=" mb-3" >
-                <h1 className='my-4 text-' style={{backgroundColor: prop.mode === "light" ? "white" : "#6F8FAF", color : prop.mode === "dark" ? "white" : "black"  }} > { prop.title} </h1>
-                <textarea value={text} style={{backgroundColor : prop.mode === "dark" ? "#6082B6" : "white" , color : prop.mode === "dark" ? "white" : "black"}} onChange={handleOnChange}  className="form-control" id="myBox" cols="30" rows="10"></textarea>
+                <h1 className='my-4 text-' style={{ backgroundColor: prop.mode === "light" ? "white" : "#6082B6", color: prop.mode === "dark" ? "white" : "black" }} > {prop.title} </h1>
+                <textarea value={text} style={{ backgroundColor: prop.mode === "dark" ? "#6F8FAF" : "white", color: prop.mode === "dark" ? "white" : "black" }} onChange={handleOnChange} className="form-control" id="myBox" cols="30" rows="10"></textarea>
 
             </div>
 
-            <button className='btn btn-primary mr- 2 my-2' onClick={handleOnClick1} >Make text Uppercase</button>
-            <button className='btn btn-primary mx-2' onClick={handleOnClick2} >Make text Lowercase</button>
-            <button className='btn btn-primary mx-2' onClick={handleOnClick3} >Clear text</button>
-            <button className='btn btn-primary mx-2' onClick={handleMakeRed} >{btnText}</button>
-            <button className='btn btn-primary mx-2' onClick={handleCopy} >copy text</button>
+            <button disabled= {text.length === 0} className='btn btn-primary mr- 2 my-2' onClick={handleOnClick1} >Make text Uppercase</button>
+            <button  disabled= {text.length === 0} className='btn btn-primary mx-2' onClick={handleOnClick2} >Make text Lowercase</button>
+            <button  disabled= {text.length === 0} className='btn btn-primary mx-2' onClick={handleOnClick3} >Clear text</button>
+            <button  disabled= {text.length === 0} className='btn btn-primary mx-2' onClick={handleMakeRed} >{btnText}</button>
+            <button  disabled= {text.length === 0} className='btn btn-primary mx-2' onClick={handleCopy} >copy text</button>
 
         </div>
 
-        <div className="container my-4" style={{backgroundColor: prop.mode === "light" ? "white" : "#6F8FAF", color : prop.mode === "dark" ? "white" : "black"  }} >
+        <div className="container my-4" style={{ backgroundColor: prop.mode === "light" ? "white" : "#6082B6", color: prop.mode === "dark" ? "white" : "black" }} >
             <h2  >
                 Your text Analysis
             </h2>
 
             <p>{text.length} characters</p>
-            <p> {text.split(" ").length} words </p>
+            <p> {text.split("").filter((element) => {return element.length !== 0}).length} words </p>
 
         </div>
 
