@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 
 
 export default function Navbar(prop) {
-
-
     return (
         <div>
             <>

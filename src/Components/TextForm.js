@@ -13,7 +13,9 @@ export default function TextForm(prop) {
 
     const handleOnChange = (event) => {
         setText(event.target.value);
+
     }
+    
 
     const handleOnClick1 = () => {
         setText(text.toUpperCase());
@@ -54,19 +56,19 @@ export default function TextForm(prop) {
     }
 
     return (<>
-       
+
         <div className='container ' >
             <div className=" mb-3" >
                 <h1 className='my-4 text-' style={{ backgroundColor: prop.mode === "light" ? "white" : "#6082B6", color: prop.mode === "dark" ? "white" : "black" }} > {prop.title} </h1>
-                <textarea value={text} style={{ backgroundColor: prop.mode === "dark" ? "#6F8FAF" : "white", color: prop.mode === "dark" ? "white" : "black" }} onChange={handleOnChange} className="form-control" id="myBox" cols="30" rows="10"></textarea>
+                <textarea value={text} style={{ backgroundColor: prop.mode === "dark" ? "#6F8FAF" : "white", color: prop.mode === "dark" ? "white" : "black" }}  onChange={handleOnChange} className="form-control" id="myBox" cols="30" rows="10"></textarea>
 
             </div>
 
-            <button disabled= {text.length === 0} className='btn btn-primary mr- 2 my-2' onClick={handleOnClick1} >Make text Uppercase</button>
-            <button  disabled= {text.length === 0} className='btn btn-primary mx-2' onClick={handleOnClick2} >Make text Lowercase</button>
-            <button  disabled= {text.length === 0} className='btn btn-primary mx-2' onClick={handleOnClick3} >Clear text</button>
-            <button  disabled= {text.length === 0} className='btn btn-primary mx-2' onClick={handleMakeRed} >{btnText}</button>
-            <button  disabled= {text.length === 0} className='btn btn-primary mx-2' onClick={handleCopy} >copy text</button>
+            <button disabled={text.length === 0} className='btn btn-primary mr- 2 my-2' onClick={handleOnClick1}> Make text Uppercase</button>
+            <button disabled={text.length === 0} className='btn btn-primary mx-2' onClick={handleOnClick2} >Make text Lowercase</button>
+            <button disabled={text.length === 0} className='btn btn-primary mx-2' onClick={handleOnClick3} >Clear text</button>
+            <button disabled={text.length === 0} className='btn btn-primary mx-2' onClick={handleMakeRed} >{btnText}</button>
+            <button disabled={text.length === 0} className='btn btn-primary mx-2' onClick={handleCopy} >copy text</button>
 
         </div>
 
@@ -76,11 +78,9 @@ export default function TextForm(prop) {
             </h2>
 
             <p>{text.length} characters</p>
-            <p> {text.split("").filter((element) => {return element.length !== 0}).length} words </p>
+            <p> {text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} words </p>
 
         </div>
-
-
     </>
     )
 }

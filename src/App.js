@@ -1,7 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar';
-// import TextForm from './Components/TextForm';
 import TextForm from './Components/TextForm';
 // import About from './Components/About';
 import React, { useState } from 'react';
@@ -59,17 +58,12 @@ function App() {
 
 
   return (<>
-
-
     <Navbar title="WoodKeeep" subTitle="contact us " mode={mode} sub='here we go!' switchmode={switchmode} />
     {/* // <Navbar title="Dhiraj " subTitle="Suraj" sub="about us" /> */}
     <Alert alert={alert} />
     <TextForm mode={mode} showAlert={showAlert} title='Enter the text here!' />
 
     {/* <About /> */}
-
-
-
 
   </>
   );

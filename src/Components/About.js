@@ -6,12 +6,12 @@ export default function About() {
         {
             color: 'black',
             backgroundColor: 'white',
-            
+
         }
     )
-    
-    const [myBorder , setBorder] = useState({
-        border : 'black 0.5px solid'
+
+    const [myBorder, setBorder] = useState({
+        border: 'black 0.5px solid'
     })
 
     const [btnText, setBtnText] = useState("Enable to dark mode");
@@ -28,7 +28,7 @@ export default function About() {
             setBtnText("Enable Light theme");
             setBorder({
 
-                border : 'light blue 0.5px solid'
+                border: 'light blue 0.5px solid'
             })
         }
         else {
@@ -40,7 +40,7 @@ export default function About() {
             )
             setBtnText("Enable Dark theme");
             setBorder({
-                border : 'black 0.5px solid'
+                border: 'black 0.5px solid'
             })
         }
     }
@@ -53,7 +53,7 @@ export default function About() {
                 </h1>
             </div>
             <div>
-                <div className="accordion" style={myStyle ,myBorder} id="accordionExample">
+                <div className="accordion" style={myStyle} id="accordionExample">
                     <div className="accordion-item " style={myStyle}>
                         <h2 className="accordion-header" id="headingOne">
                             <button className="accordion-button" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
