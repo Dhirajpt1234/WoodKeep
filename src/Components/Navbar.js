@@ -45,7 +45,6 @@ Navbar.propTypes = {
     mode: PropTypes.string
 
 }
-
 Navbar.defaultProps = {
     title: "Title here",
     subTitle: "Sub Title here"

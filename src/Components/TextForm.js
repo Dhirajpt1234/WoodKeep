@@ -15,7 +15,6 @@ export default function TextForm(prop) {
         setText(event.target.value);
 
     }
-    
 
     const handleOnClick1 = () => {
         setText(text.toUpperCase());
@@ -60,7 +59,7 @@ export default function TextForm(prop) {
         <div className='container ' >
             <div className=" mb-3" >
                 <h1 className='my-4 text-' style={{ backgroundColor: prop.mode === "light" ? "white" : "#6082B6", color: prop.mode === "dark" ? "white" : "black" }} > {prop.title} </h1>
-                <textarea value={text} style={{ backgroundColor: prop.mode === "dark" ? "#6F8FAF" : "white", color: prop.mode === "dark" ? "white" : "black" }}  onChange={handleOnChange} className="form-control" id="myBox" cols="30" rows="10"></textarea>
+                <textarea value={text} style={{ backgroundColor: prop.mode === "dark" ? "#6F8FAF" : "white", color: prop.mode === "dark" ? "white" : "black" }} onChange={handleOnChange} className="form-control" id="myBox" cols="30" rows="10"></textarea>
 
             </div>
 
